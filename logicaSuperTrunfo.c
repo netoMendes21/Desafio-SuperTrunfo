@@ -99,7 +99,7 @@ int main()
     carta(&estado, codigoDaCidade, nomeDaCidade, &populacao, &area, &PIB, &quantidadePontosTuristicos);
     
     //RETORNO DA PRMEIRA CARTA//
-    printf("\nEssa é a carta do primeiro jogador:\n");
+    printf("\n--------Essa é a carta do primeiro jogador--------");
     cartaPronta(estado, codigoDaCidade, nomeDaCidade, populacao, area, PIB, quantidadePontosTuristicos);
     
     printf("\nAgora crie a carta do segundo jogador\n");
@@ -109,7 +109,7 @@ int main()
     carta(&estado2, codigoDaCidade2, nomeDaCidade2, &populacao2, &area2, &PIB2, &quantidadePontosTuristicos2);
 
     // RETORNO DA CARTA DO SEGUNDO JOGADOR //
-    printf("\nEssa é a carta do segundo jogador:\n");
+    printf("\n--------Essa é a carta do segundo jogador--------");
     cartaPronta(estado2, codigoDaCidade2, nomeDaCidade2, populacao2, area2, PIB2, quantidadePontosTuristicos2);
 
     // Exemplo:
@@ -117,7 +117,7 @@ int main()
     // scanf("%s", codigo);
 
     // (Repita para cada propriedade)
-    printf("Que comece a batalha!\n");
+    printf("\n\nQue comece a batalha!\n");
 
     // Escolha de atributos //
     printf("Escolha com qual dos atributos você quer competir:\n");
@@ -129,7 +129,7 @@ int main()
     printf("6. Pontos Turísticos\n");
     printf("7. Super Poder\n");
     printf("8. Total (só pode ser escolhida se já tiver escolhido algum atributo antes...)\n");
-    
+    scanf("%d", &opcao1);
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
@@ -139,46 +139,83 @@ int main()
         case 1 :
         if (populacao > populacao2)
         {
-            printf("\nPrimeiro jogador ganhou na propriedade: população\n");
+            printf("\nPrimeiro jogador ganhou na propriedade: população\n\n");
             pontuacao1 += 1;
-        } else
-        {
-        printf("\nSegundo Jogador ganhou na propriedade: população\n");
-        pontuacao2 += 1;
+        } else {
+            printf("\nSegundo Jogador ganhou na propriedade: população\n\n");
+            pontuacao2 += 1;
         }
-    break;
+            break;
+        default:
+            printf("--------Opção inválida!--------\n\n");
+            break;
+    }
 
     printf("Escolha com qual dos atributos você quer competir:\n");
     printf("1. População\n");
     printf("2. Área\n");
     printf("3. PIB\n");
     printf("4. Per Capita\n");
-    printf("5. Densidade Populacional");
+    printf("5. Densidade Populacional\n");
     printf("6. Pontos Turísticos\n");
     printf("7. Super Poder\n");
     printf("8. Total (só pode ser escolhida se já tiver escolhido algum atributo antes...)\n");
-    scanf("%d", opcao2);
+    scanf("%d", &opcao2);
 
     if(opcao2 == opcao1) {
-        printf("Você já escolheu a opção População!\n");
+        printf("\nVocê já escolheu esta opção!\n");
+        printf("--------------------------------------------\n\n");
     } else {
-
      switch(opcao2) {
         case 2 :
         if (area > area2)
         {
             printf("\nPrimeiro jogador ganhou na propriedade: área\n");
             pontuacao1 += 1;
-        }
-        else
-        {
+        } else {
             printf("\nSegundo Jogador na propriedade: área\n");
             pontuacao2 += 1;
         }
             break;
+        default:
+        printf("--------Opção inválida!--------\n\n");
+           return;
         }
-     }
+    }
    
+    printf("Escolha com qual dos atributos você quer competir:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Per Capita\n");
+    printf("5. Densidade Populacional");
+    printf("6. Pontos Turísticos\n");
+    printf("7. Super Poder\n");
+    printf("8. Total (só pode ser escolhida se já tiver escolhido algum atributo antes...)\n");
+    scanf("%d", &opcao3);
+
+   /* if((opcao3 == opcao1) || (opcao3 == opcao2)) {
+        printf("Você já escolheu esta opção!\n");
+    } else {
+
+     switch(opcao3) { 
+        case 3 :
+        if (PIB > PIB2)
+        {
+            printf("\nPrimeiro Jogador ganhou na propriedade: PIB\n");
+            pontuacao1 += 1;
+        }
+        else
+        {
+            printf("\nSegundo Jogador ganhou na propriedade: PIB\n");
+            pontuacao2 += 1;
+        }
+            break;
+        default:
+        printf("--------Opção inválida!--------\n\n");
+            return;
+        }
+    }
 
     printf("Escolha com qual dos atributos você quer competir:\n");
     printf("1. População\n");
@@ -189,43 +226,32 @@ int main()
     printf("6. Pontos Turísticos\n");
     printf("7. Super Poder\n");
     printf("8. Total (só pode ser escolhida se já tiver escolhido algum atributo antes...)\n");
-    scanf("%d", opcao2);
-
-    if(opcao3 == opcao1 && opcao2) {
-        printf("Você já escolheu a opção População!\n");
-    } else {
-        switch(opcao3)
-    case 3 :
-    if (PIB > PIB2)
-    {
-        printf("\nPrimeiro Jogador ganhou na propriedade: PIB\n");
-        pontuacao1 += 1;
-    }
-    else
-    {
-        printf("\nSegundo Jogador ganhou na propriedade: PIB\n");
-        pontuacao2 += 1;
-    }
-    break;
-    }
-
-
+    scanf("%d", &opcao4);
     
+    if((opcao4 == opcao1) || (opcao4 == opcao2) || (opcao4 == opcao3)) {
+        printf("Você já escolheu esta opção!\n");
+    } else {
 
-    case 4 :
-    if (perCapita(PIB, populacao) > perCapita(PIB2, populacao2))
-    {
-        printf("\nPrimeiro Jogador ganhou na propriedade: renda per capita\n");
-        pontuacao1 += 1;
+     switch(opcao4) {
+        case 4 :
+        if (perCapita(PIB, populacao) > perCapita(PIB2, populacao2))
+        {
+            printf("\nPrimeiro Jogador ganhou na propriedade: renda per capita\n");
+            pontuacao1 += 1;
+        } else {
+            printf("\nSegundo Jogador ganhou na propriedade: renda per capita\n");
+            pontuacao2 += 1;
+        }
+            break;
+            default:
+            printf("--------Opção inválida!--------\n\n");
+            break;
+        }
     }
-    else
-    {
-        printf("\nSegundo Jogador ganhou na propriedade: renda per capita\n");
-        pontuacao2 += 1;
-    }
-    break;
 
-    case 5 :
+
+
+   case 5 :
     if (densidadePopulacional(populacao, area) < densidadePopulacional(populacao2, area2))
     {
         printf("\nPrimeiro Jogador ganhou na propriedade: densidade populacional\n");
@@ -264,6 +290,7 @@ int main()
         pontuacao2 += 1;
     }
     break;
+    
 
     case 8 :
     if (pontuacao1 > pontuacao2)
@@ -281,6 +308,7 @@ int main()
     default: printf("Escolha uma opção válida!");
         break;
     }
+        */
 
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
