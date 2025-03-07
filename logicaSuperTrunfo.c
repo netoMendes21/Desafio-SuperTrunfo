@@ -352,6 +352,12 @@ int main()
 
             CartaType carta1 = listaDeCartas[0];
             CartaType carta2 = listaDeCartas[1];
+
+            for (int i = 0; i < 9; i++)
+            {
+                opcoesDeComparacao[i] = 0;
+            }
+            iterador = 0;
             do
             {
                 printDynamicMenu(opcoesDeComparacao, iterador);
