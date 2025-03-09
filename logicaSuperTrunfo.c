@@ -298,7 +298,7 @@ int main()
     // Definição das variáveis para armazenar as propriedades das cidades
     int opcoesDeComparacao[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
     int iterador = 0;
-    int opcao;
+    // int opcao;
     int opcaoMenu;
     int totalCartas = 0;
     float pontuacao1 = 0, pontuacao2 = 0;
